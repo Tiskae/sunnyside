@@ -1,0 +1,112 @@
+h1,
+h2,
+h3,
+h4,
+.btn--inline {
+    font-family: "Fraunces", serif;
+}
+
+h1 {
+    font-size: 2.9rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: 51em) {
+        font-size: 2.5rem;
+    }
+}
+
+h2 {
+    font-size: 2.3rem;
+
+    @media only screen and (max-width: 51em) {
+        font-size: 2rem;
+    }
+
+    @media only screen and (max-width: 40em) {
+        font-size: 1.6rem;
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+
+    @media only screen and (max-width: 51em) {
+        font-size: 1.3rem;
+    }
+}
+
+h4 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: 51em) {
+        font-size: 1rem;
+    }
+
+    &.grey {
+        color: hsl(210, 4%, 67%);
+        letter-spacing: 3px;
+    }
+}
+
+p.paragraph {
+    font-size: 0.9rem;
+    color: hsl(232, 10%, 55%);
+    line-height: 1.6;
+
+    @media only screen and (max-width: 40em) {
+        font-size: 1.2rem;
+    }
+
+    &--small {
+        font-size: 0.9rem;
+
+        @media only screen and (max-width: 40em) {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.btn--inline {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    position: relative;
+
+    &::after {
+        content: "";
+        height: 5px;
+        width: 100%;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        transition: all 0.2s;
+        z-index: -1;
+    }
+
+    &-yellow::after {
+        background-color: rgba(250, 212, 0, 0.4);
+    }
+
+    &-red::after {
+        background-color: rgba(254, 120, 103, 0.4);
+    }
+
+    &:hover::after {
+        width: 120%;
+        left: -10%;
+        height: 7px;
+        border-radius: 100000000rem; // why not?🙂
+    }
+
+    &-yellow:hover::after {
+        background-color: rgba(250, 212, 0, 0.8);
+    }
+
+    &-red:hover::after {
+        background-color: rgba(254, 120, 103, 0.8);
+    }
+}
